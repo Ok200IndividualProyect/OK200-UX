@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import Singup from './routes/Signup.jsx'
-import Login from './routes/login.jsx'
-import Dashboard from './routes/Dashboard.jsx'
+import Signup from './pages/Signup.jsx'
+import Login from './pages/login.jsx'
+import Dashboard from './pages/Dashboard.jsx'
 
 
 const router = createBrowserRouter ([
@@ -18,7 +18,7 @@ const router = createBrowserRouter ([
   element: <Signup />,
 },
 {
-    path: "/",
+    path: "/dashboard",
      element: <Dashboard />
 
 },
