@@ -28,8 +28,8 @@ function InputForm() {
   };
 
   return (
-    
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className="input-form">
+    <h2>Sing up</h2>
       <label htmlFor="username"> Username </label>
       <input
         type="text"
