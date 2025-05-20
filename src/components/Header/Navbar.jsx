@@ -12,7 +12,7 @@ function Navbar() {
             </div>
                         <div className="divLogo">
                 <Link to={"/"}>
-                    <img className="logoSoundwave" src={logo} alt="Soundwave logo" /></Link>
+                    <img className="logo0k200" src={logo} alt="logo0k200" /></Link>
             </div>
         </nav>
     )

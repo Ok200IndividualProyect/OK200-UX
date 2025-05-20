@@ -1,10 +1,12 @@
-.logoSoundwave {
-  height: 60px;
+.logo0k200 {
+  height: 70px;
   transition: opacity 0.3s ease;
 }
-.logoSoundwave:hover {
+.logo0k200:hover {
   opacity: 0.4;
 }
+
+
 
 .navbar-container {
   z-index: 999;
@@ -43,28 +45,15 @@
 .divLink {
   text-decoration: none;
   transition: color 0.3s ease;
+  font-size: 2rem;
+  color: white;
+
+
 }
 
 @media screen and (max-width: 700px) {
-  .logoSoundwave {
-    height: 3.1rem;
-  }
+.divLink {
+  font-size: 1.1rem;
+}
 
-  .navbar-container {
-    height: 3.1rem;
-  }
-
-  .divPages {
-    display: flex;
-    justify-content: center;
-  }
-
-  .divLogo {
-    display: flex;
-    margin-left: 2rem;
-  }
-
-  .divLogo p {
-    font-size: 1.2rem;
-  }
 }
