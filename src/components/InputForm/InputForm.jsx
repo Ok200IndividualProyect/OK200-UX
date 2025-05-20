@@ -28,6 +28,7 @@ function InputForm() {
   };
 
   return (
+    
     <form onSubmit={handleSubmit(onSubmit)}>
       <label htmlFor="username"> Username </label>
       <input
