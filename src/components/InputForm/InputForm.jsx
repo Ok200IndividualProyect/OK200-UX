@@ -2,6 +2,7 @@ import "./InputForm.css";
 import { registerUser } from "../../api/userService";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import Select from 'react-select';
 
 function InputForm() {
   const {
@@ -10,7 +11,6 @@ function InputForm() {
     watch,
     formState: { errors },
   } = useForm();
-
 
   const [serverErrors, setServerErrors] = useState({});
 
@@ -26,6 +26,35 @@ function InputForm() {
       setServerErrors(error)
     }
   };
+  const options = [
+  { value: 'devFS', label: 'Developer Full Stak' },
+  { value: 'devB', label: 'Developer Backend' },
+  { value: 'devF', label: 'Developer Frontend' },
+  { value: 'ciberIT', label: 'IT Auditor' },
+  { value: 'ciberTryToHackme', label: 'Try To Hack Me lover' },
+  { value: 'operativeSystem', label: 'Operating System Focus' },
+  { value: 'openSource', label: 'Open Source Communiti' },
+
+];
+
+function MySelectComponent() {
+  const [selectedOptions, setSelectedOptions] = useState(null);
+
+  const handleChange = (selectedOption) => {
+    setSelectedOptions(selectedOption);
+    console.log(`Opción(es) seleccionada(s):`, selectedOption);
+  };
+
+  return (
+    <Select
+      options={options}
+      isMulti
+      value={selectedOptions}
+      onChange={handleChange}
+      closeMenuOnSelect={false}
+    />
+  );
+}
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="input-form">
@@ -108,21 +137,10 @@ function InputForm() {
       {errors.discordLink && <span>{errors.discordLink.message}</span>}
       {serverErrors.discordLink && <span>{serverErrors.discordLink}</span>}
 
-
-      {/* <label htmlFor="technologies"> What am I?</label>
-/*COMENT THOSE LINES TO IMPLEMENT ON THE FOLOWING DAYS *\
-      <select
-        {...register("technologies", {
-          required: true,
-        })}
-      >
-        {errors.technologies && <span> Your technologies are requiered </span>}
-        <option value="dvFullStak">Developer Full Stak</option>
-        <option value="dvJava">Developer Java</option>
-        <option value="dvReact">Developer React</option>
-        <option value="ciber">CyberSecurity Auditor</option>
-        <option value="tryToHackMe">Try to Hackme Lover</option>
-      </select> */}
+ <label htmlFor="technologies"> What am I?</label>
+<MySelectComponent />
+   
+      
       <button>Sign Up</button>
     </form>
   );
