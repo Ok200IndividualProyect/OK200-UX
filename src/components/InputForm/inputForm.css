@@ -32,16 +32,4 @@
 }
 
 
-.input-form button {
-  background-color: #000000;
-  color: white;
-  padding: 0.6rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1rem;
-}
 
-.input-form button:hover {
-  background-color: #F9B14A;
-}

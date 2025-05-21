@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import Select from 'react-select';
 import { getTechnologies } from "../../api/technologiesService";
+import Button from "../Button/Button.jsx";
 
 function InputForm() {
   const { register, handleSubmit, watch, formState: { errors },} = useForm();
@@ -146,7 +147,7 @@ function InputForm() {
 />
    
       
-      <button>Sign Up</button>
+      <Button>Sign Up</Button>
     </form>
   );
 }
