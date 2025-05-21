@@ -1,23 +1,48 @@
 import "./InputForm.css";
 import { registerUser } from "../../api/userService";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Select from 'react-select';
+import { getTechnologies } from "../../api/technologiesService";
 
 function InputForm() {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
-
+  const { register, handleSubmit, watch, formState: { errors },} = useForm();
   const [serverErrors, setServerErrors] = useState({});
-
+  const [technologies, setTechnologies] = useState([]);
+  const [selectedOptions, setSelectedOptions] = useState([]);
   const password = watch("password", "");
 
-  const onSubmit = async (data) => {
+
+  useEffect(() => {
+    const fetchTechnologies = async() =>{
+      try {
+        const techList = await getTechnologies();
+        const formatted = techList.map(tech => ({
+          value: tech.id,
+          label: tech.name
+        }));
+        setTechnologies(formatted);
+      } catch (error) {
+        console.error("Error al cargar tecnologías:", error);
+      }
+    };
+    fetchTechnologies();
+  }, []);
+
+
+  const handleTechChange = (selected) => {
+    setSelectedOptions(selected);
+  };
+
+    const onSubmit = async (data) => {
     try {
+      const selectedTechIds = selectedOptions.map(option => ({id: option.value}));
+
+      const payload = {
+        ...data,
+        technologies: selectedTechIds,
+      };
+      
       const user = await registerUser(data);
       console.log("Usuario registrado", user);
     setServerErrors({});
@@ -25,36 +50,10 @@ function InputForm() {
       console.error("Backend error:", error);
       setServerErrors(error)
     }
-  };
-  const options = [
-  { value: 'devFS', label: 'Developer Full Stak' },
-  { value: 'devB', label: 'Developer Backend' },
-  { value: 'devF', label: 'Developer Frontend' },
-  { value: 'ciberIT', label: 'IT Auditor' },
-  { value: 'ciberTryToHackme', label: 'Try To Hack Me lover' },
-  { value: 'operativeSystem', label: 'Operating System Focus' },
-  { value: 'openSource', label: 'Open Source Communiti' },
 
-];
-
-function MySelectComponent() {
-  const [selectedOptions, setSelectedOptions] = useState(null);
-
-  const handleChange = (selectedOption) => {
-    setSelectedOptions(selectedOption);
-    console.log(`Opción(es) seleccionada(s):`, selectedOption);
   };
 
-  return (
-    <Select
-      options={options}
-      isMulti
-      value={selectedOptions}
-      onChange={handleChange}
-      closeMenuOnSelect={false}
-    />
-  );
-}
+  
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="input-form">
@@ -137,8 +136,14 @@ function MySelectComponent() {
       {errors.discordLink && <span>{errors.discordLink.message}</span>}
       {serverErrors.discordLink && <span>{serverErrors.discordLink}</span>}
 
- <label htmlFor="technologies"> What am I?</label>
-<MySelectComponent />
+<label htmlFor="technologies">What am I?</label>
+<Select
+  options={technologies}
+  isMulti
+  value={selectedOptions}
+  onChange={handleTechChange}
+  closeMenuOnSelect={false}
+/>
    
       
       <button>Sign Up</button>
