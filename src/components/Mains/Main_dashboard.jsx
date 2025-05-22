@@ -1,7 +1,9 @@
+import "./main_dashboard.css";
 import React, { useEffect, useState } from "react";
 import Matches from "../Matches/Matches";
 
 function MainDashboard() {
+  <div className="content-main"></div>
   const [loggedUserId, setLoggedUserId] = useState(null);
 
   useEffect(() => {
@@ -17,10 +19,11 @@ function MainDashboard() {
 
   return (
     <div className="main-dashboard">
-      <h1>Bienvenido a tu Dashboard</h1>
       <Matches userId={loggedUserId} />
     </div>
+
   );
+
 }
 
 export default MainDashboard;
