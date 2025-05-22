@@ -1,4 +1,4 @@
-💻 CodeCraft ok200
+💻 ok200 Frontend
 
 Frontend of ok200, a tech-matching app where users can connect based on shared technology interests.
 
