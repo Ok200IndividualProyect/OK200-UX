@@ -22,3 +22,17 @@ export async function registerUser(userData) {
   }
 }
 
+export async function getUserMatches(userId) {
+  try {
+    const response = await fetch(`${API_URL}/${userId}/matches`);
+    if (!response.ok) {
+      throw new Error("Error al obtener los matches");
+    }
+    const data = await response.json();
+    return data; // debería ser un array de UserDTOs
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
+
