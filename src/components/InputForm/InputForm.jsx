@@ -1,4 +1,5 @@
 import "./InputForm.css";
+import { useNavigate } from "react-router-dom";
 import { registerUser } from "../../api/userService";
 import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
@@ -12,6 +13,7 @@ function InputForm() {
   const [technologies, setTechnologies] = useState([]);
   const [selectedOptions, setSelectedOptions] = useState([]);
   const password = watch("password", "");
+  const navigate = useNavigate();
 
 
   useEffect(() => {
@@ -44,9 +46,10 @@ function InputForm() {
         technologies: selectedTechIds,
       };
       
-      const user = await registerUser(data);
+      const user = await registerUser(payload);
       console.log("Usuario registrado", user);
     setServerErrors({});
+    navigate("/dashboard");
     } catch (error) {
       console.error("Backend error:", error);
       setServerErrors(error)
