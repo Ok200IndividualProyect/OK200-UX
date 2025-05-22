@@ -1,14 +1,28 @@
+/* sharedStyles.css */
+
+:root {
+  --mint-pale: #dff6e0;
+  --butter-yellow: #fcd56c;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
 .user-card {
-  background-color: #FCDF87;
+  background-color: var(--mint-pale);
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px var(--shadow-color);
   text-align: center;
   margin: 1rem auto;
   max-width: 400px;
 }
 
-.button-group button {
-  flex: 1;
-  margin: 0 0.5rem;
+.user-card .username,
+.user-card .description,
+.user-card .technologies {
+  font-size: 1.7rem;
+  background-color: var(--butter-yellow);
+  padding: 2.75rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
 }
+

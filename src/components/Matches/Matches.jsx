@@ -1,8 +1,10 @@
 import "./matches.css";
 
+
+
 import React, { useEffect, useState } from "react";
 import { getUserMatches } from "../../api/userService";
-import UserCard from "../UserCard/UserCard";
+import UserCard from "./UserCard";
 import Button from "../Button/Button";
 
 function Matches({ userId }) {
@@ -47,8 +49,8 @@ return (
     <div className="matches-container">
       <UserCard user={currentMatch} showDiscord={showDiscord} />
       <div style={{ marginTop: "1rem", display: "flex", gap: "1rem" }}>
-        <Button onClick={handleNext}>Next</Button>
-        <Button onClick={handleConnect}>Let's Connect</Button>
+        <Button className = "shared-button" onClick={handleConnect}>Let's Connect</Button>
+        <Button className = "shared-button" onClick={handleNext}>Next</Button>
       </div>
     </div>
   );

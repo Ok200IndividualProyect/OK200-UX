@@ -1,4 +1,4 @@
-import "./main_dashboard.css";
+import "./main.css";
 import React, { useEffect, useState } from "react";
 import Matches from "../Matches/Matches";
 
@@ -18,7 +18,10 @@ function MainDashboard() {
   }
 
   return (
-    <div className="main-dashboard">
+    <div className="content-main">
+      <h1 className="content-text">
+        <div className="heading">Start connecting with people not just to build 
+        great programs and solutions, but to create  friendships along the way.</div></h1>
       <Matches userId={loggedUserId} />
     </div>
 

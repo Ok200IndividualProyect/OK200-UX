@@ -1,14 +1,13 @@
 
-import Navbar from "./Navbar"
-import "./navbar.css"
+import Navbar from "./Navbar";
+import "./navbar.css";
 
-function Header() {
-
-   return (
-      <header className="">
-         <Navbar />
-      </header>
-   )
-
+function Header({ linkText, linkTo, showLogo = true, className = "" }) {
+  return (
+    <header className={className}>
+      <Navbar linkText={linkText} linkTo={linkTo} showLogo={showLogo} />
+    </header>
+  );
 }
-export default Header
+
+export default Header;

@@ -1,4 +1,4 @@
-import "./main_signup.css";
+import "./main.css";
 import InputForm from "../InputForm/InputForm";
 
 

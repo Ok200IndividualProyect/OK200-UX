@@ -1,0 +1,13 @@
+* {
+    font-family: Inter ;
+}
+
+:root {
+    --mint-pale: #DEEEE4;
+    --gray-lavender-dark: #5B5A76;
+    --butter-yellow: #FCDF87;
+    --black: #000000;
+    --neutral-color: #ccc;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --alert-red: #e74c3c;
+}

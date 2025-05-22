@@ -1,13 +1,20 @@
 .custom-button {
-  background-color: #000000;
+  background-color: var(--black);
   color: white;
   padding: 0.6rem;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   font-size: 1rem;
+
 }
 
 .custom-button:hover {
-  background-color: #F9B14A;
+  background-color: var(--butter-yellow);
+}
+
+@media screen and (max-width: 700px) {
+  :root {
+    font-size: 1rem;
+  }
 }

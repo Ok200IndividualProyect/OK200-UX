@@ -26,6 +26,9 @@
 }
 
 @media screen and (max-width: 700px) {
+  .my-heading {
+      display: block;
+    }
   .content-main {
     flex-direction: column;
     margin: 1rem
