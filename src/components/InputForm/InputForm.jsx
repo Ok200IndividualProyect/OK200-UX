@@ -48,7 +48,8 @@ function InputForm() {
       
       const user = await registerUser(payload);
       console.log("Usuario registrado", user);
-    setServerErrors({});
+    localStorage.setItem("loggedUserId", user.id);
+     setServerErrors({});
     navigate("/dashboard");
     } catch (error) {
       console.error("Backend error:", error);
