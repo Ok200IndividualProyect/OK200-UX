@@ -1,12 +1,46 @@
-# React + Vite
+💻 CodeCraft ok200
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend of ok200, a tech-matching app where users can connect based on shared technology interests.
 
-Currently, two official plugins are available:
+    🚀 Passionate about technology and building meaningful connections.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🧰 Tech Stack
 
-## Expanding the ESLint configuration
+    React (with Vite)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+    JavaScript (ES6+)
+
+    React Select – for enhanced select inputs
+
+    React Router DOM – for routing
+
+    React Hook Form
+
+    Fetch API
+
+📁 Project Structure
+
+src
+├── components       // Reusable UI components (e.g., Header, Footer, MatchCard, )
+├── pages            // Page-level components (Signup, Dashboard, Mains)
+├── services         // API logic (userService, technologiesService)
+├── assets           // Static files (logos)
+└── App.jsx          // Main app 
+
+
+
+🚀 How to Run
+
+    Clone the repository:
+
+git clone https://github.com/yourusername/codecraft-frontend.git
+cd codecraft-frontend
+npm install
+npm run dev
+
+    Make sure the backend is running at http://localhost:8080.
+
+🌟 Inspiration
+
+    "Fueled by a passion for tech, we built a space to connect the makers of tomorrow."
+
