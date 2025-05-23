@@ -1,4 +1,3 @@
-// Navbar.jsx
 import { Link } from "react-router-dom";
 import logo from "../../assets/logoOk200.png";
 

@@ -1,11 +1,3 @@
-/* sharedStyles.css */
-
-:root {
-  --mint-pale: #dff6e0;
-  --butter-yellow: #fcd56c;
-  --shadow-color: rgba(0, 0, 0, 0.1);
-}
-
 .user-card {
   background-color: var(--mint-pale);
   padding: 1.5rem;

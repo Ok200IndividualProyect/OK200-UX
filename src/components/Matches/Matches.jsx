@@ -1,7 +1,5 @@
 import "./matches.css";
 
-
-
 import React, { useEffect, useState } from "react";
 import { getUserMatches } from "../../api/userService";
 import UserCard from "./UserCard";

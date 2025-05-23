@@ -132,10 +132,7 @@ function InputForm() {
       <input type="text"
               {...register("discordLink", {
     required: "El enlace de Discord es requerido",
-    // pattern: {
-    //   value: /^https:\/\/discord\.com\/.+$/,
-    //   message: "El link debe empezar con https://discord.com/",
-    // },
+
   })}
 />
       {errors.discordLink && <span>{errors.discordLink.message}</span>}
